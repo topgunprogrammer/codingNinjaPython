@@ -1,10 +1,8 @@
-# Find Unique
+# Find Duplicate
 # Send Feedback
-# You have been given an integer array/list(ARR) of size N. Where N is equal to [2M + 1].
-# Now, in the given array/list, 'M' numbers are present twice and one number is present only once.
-# You need to find and return that number which is unique in the array/list.
-#  Note:
-# Unique element is always present in the array/list according to the given condition.
+# You have been given an integer array/list(ARR) of size N which contains numbers from 0 to (N - 2). Each number is present at least once. That is, if N = 5, the array/list constitutes values ranging from 0 to 3 and among these, there is a single integer value that is present twice. You need to find and return that duplicate number present in the array.
+# Note :
+# Duplicate number is always present in the given array/list.
 # Input format :
 # The first line contains an Integer 't' which denotes the number of test cases or queries to be run. Then the test cases follow.
 #
@@ -12,7 +10,7 @@
 #
 # Second line contains 'N' single space separated integers representing the elements in the array/list.
 # Output Format :
-# For each test case, print the unique element present in the array.
+# For each test case, print the duplicate element in the array/list.
 #
 # Output for every test case will be printed in a separate line.
 # Constraints :
@@ -21,12 +19,11 @@
 # Time Limit: 1 sec
 # Sample Input 1:
 # 1
-# 7
-# 2 3 1 6 3 6 2
+# 9
+# 0 7 2 5 4 7 1 3 6
 # Sample Output 1:
-# 1
-
-arr = [3,1,4,3,4]
+# 7
+arr = [0, 7, 2, 5, 4, 7, 1, 3, 6]
 
 dict = {}
 
@@ -37,5 +34,5 @@ for x in arr:
         dict[x] = 1
 
 for key, value in dict.items():
-    if value  == 1 :
+    if value  > 1 :
         print(key)
